@@ -50,7 +50,7 @@ export default function Index() {
         <img
           src="https://api.builder.io/api/v1/image/assets/TEMP/98bbf3622ce609fe8b26c0144bd736eab94c3dfd?width=776"
           alt="Parinith Reddy"
-          className="w-full max-w-[260px] sm:max-w-[320px] lg:absolute lg:right-[73px] lg:top-[60px] lg:w-[388px] lg:max-w-[388px]"
+          className="w-full max-w-[260px] sm:max-w-[320px] lg:absolute lg:right-[73px] lg:top-[112px] lg:w-[388px] lg:max-w-[388px]"
         />
       </div>
 
