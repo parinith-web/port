@@ -5,10 +5,9 @@ import { createRoot } from "react-dom/client";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import PageLayout from "./components/layout/PageLayout";
 import Index from "./pages/Index";
-import Placeholder from "./pages/Placeholder";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,29 +27,15 @@ const App = () => (
               </PageLayout>
             }
           />
-          <Route
-            path="/skills"
-            element={
-              <PageLayout>
-                <Placeholder title="skills" />
-              </PageLayout>
-            }
-          />
+          {/* Old section routes now live as anchors on the single page */}
+          <Route path="/skills" element={<Navigate replace to="/#skills" />} />
           <Route
             path="/projects"
-            element={
-              <PageLayout>
-                <Placeholder title="projects" />
-              </PageLayout>
-            }
+            element={<Navigate replace to="/#projects" />}
           />
           <Route
             path="/activity"
-            element={
-              <PageLayout>
-                <Placeholder title="activity" />
-              </PageLayout>
-            }
+            element={<Navigate replace to="/#activity" />}
           />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route
