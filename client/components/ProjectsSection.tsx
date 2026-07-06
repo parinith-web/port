@@ -13,7 +13,7 @@ const projects: Project[] = [
   {
     name: "Feather",
     description:
-      "An AI-powered background remover built with React and Express. Upload a photo, cut the background out in seconds with ClipDrop's AI, swap in a new one, and export — with Google sign-in, a history gallery, and a one-time Pro upgrade via Paddle.",
+      "An AI background remover — upload a photo, cut it out in seconds, swap the background, and export.",
     cover: "/projects/feather-cover.png",
     github: "https://github.com/parinith-web/feather",
     live: "https://feather-bg.vercel.app/",
@@ -21,7 +21,7 @@ const projects: Project[] = [
   {
     name: "Nest",
     description:
-      'A browser extension that organizes Reddit saved posts into custom collections, enabling efficient categorization, faster retrieval, and a clutter-free knowledge management experience.',
+      "A browser extension that organizes Reddit saved posts into custom collections for faster retrieval.",
     cover: "/projects/nest-cover.png",
     github: "https://github.com/parinith-web/nest",
     live: "https://nest-organizer.vercel.app/",

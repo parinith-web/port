@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 interface ContributionDay {
   date: string;
@@ -87,6 +87,8 @@ export default function GithubActivityCalendar({
   const [status, setStatus] = useState<"loading" | "ready" | "error">(
     "loading",
   );
+  const gridWrapRef = useRef<HTMLDivElement>(null);
+  const [gridWidth, setGridWidth] = useState(0);
 
   useEffect(() => {
     let cancelled = false;
@@ -109,6 +111,20 @@ export default function GithubActivityCalendar({
       cancelled = true;
     };
   }, [username]);
+
+  useEffect(() => {
+    const el = gridWrapRef.current;
+    if (!el) return;
+
+    const observer = new ResizeObserver((entries) => {
+      const width = entries[0]?.contentRect.width;
+      if (width) setGridWidth(width);
+    });
+    observer.observe(el);
+    setGridWidth(el.getBoundingClientRect().width);
+
+    return () => observer.disconnect();
+  }, [status]);
 
   const weeks = useMemo(
     () => (data ? buildWeeks(data.contributions) : []),
@@ -146,8 +162,17 @@ export default function GithubActivityCalendar({
     );
   }
 
-  const cellSize = 11;
-  const cellGap = 3;
+  // Fill the available width: solve for a cell size where
+  // width = weeks*cellSize + (weeks-1)*gap, with gap = cellSize * GAP_RATIO
+  const GAP_RATIO = 0.28;
+  const numWeeks = Math.max(weeks.length, 1);
+  const rawCellSize =
+    gridWidth > 0
+      ? gridWidth / (numWeeks + (numWeeks - 1) * GAP_RATIO)
+      : 12;
+  const cellSize = Math.min(Math.max(rawCellSize, 9), 22);
+  const cellGap = cellSize * GAP_RATIO;
+  const labelColWidth = 32;
 
   return (
     <div>
@@ -158,11 +183,15 @@ export default function GithubActivityCalendar({
         </p>
       )}
 
-      <div className="inline-flex min-w-full gap-3">
+      <div className="flex w-full min-w-[640px] gap-3">
         {/* Day-of-week labels */}
         <div
-          className="flex flex-col text-[11px] text-white/40"
-          style={{ gap: cellGap, marginTop: cellSize + cellGap + 4 }}
+          className="flex flex-shrink-0 flex-col text-[11px] text-white/40"
+          style={{
+            width: labelColWidth,
+            gap: cellGap,
+            marginTop: cellSize + cellGap + 4,
+          }}
         >
           {DAY_LABELS.map((label, i) => (
             <div
@@ -175,7 +204,7 @@ export default function GithubActivityCalendar({
           ))}
         </div>
 
-        <div>
+        <div className="min-w-0 flex-1" ref={gridWrapRef}>
           {/* Month labels */}
           <div
             className="relative mb-1 text-[11px] text-white/40"
