@@ -11,6 +11,14 @@ interface Project {
 
 const projects: Project[] = [
   {
+    name: "Feather",
+    description:
+      "An AI-powered background remover built with React and Express. Upload a photo, cut the background out in seconds with ClipDrop's AI, swap in a new one, and export — with Google sign-in, a history gallery, and a one-time Pro upgrade via Paddle.",
+    cover: "/projects/feather-cover.png",
+    github: "https://github.com/parinith-web/feather",
+    live: "https://feather-bg.vercel.app/",
+  },
+  {
     name: "Nest",
     description:
       'A browser extension that organizes Reddit saved posts into custom collections, enabling efficient categorization, faster retrieval, and a clutter-free knowledge management experience.',

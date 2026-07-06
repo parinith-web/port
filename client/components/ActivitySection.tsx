@@ -8,6 +8,7 @@ import {
   Tooltip,
   CartesianGrid,
 } from "recharts";
+import GithubActivityCalendar from "@/components/GithubActivityCalendar";
 
 const GITHUB_USERNAME = "parinith-web";
 const CODEFORCES_HANDLE = "parinithreddymavurapu";
@@ -153,22 +154,17 @@ export default function ActivitySection() {
       <div className="mt-10 flex flex-col gap-6 lg:mt-12 lg:gap-8">
         {/* GitHub Activity */}
         <div className="overflow-hidden rounded-md border border-white/10 bg-white/[0.03]">
-          <h3 className="border-b border-white/10 px-5 py-4 text-sm font-semibold uppercase tracking-[1px] text-white/50 sm:px-6">
-            GitHub Activity
-          </h3>
           <a
             href={`https://github.com/${GITHUB_USERNAME}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="block overflow-x-auto p-5 sm:p-6"
+            className="block border-b border-white/10 px-5 py-4 text-sm font-semibold uppercase tracking-[1px] text-white/50 transition-colors hover:text-white/80 sm:px-6"
           >
-            <img
-              src={`https://ghchart.rshah.org/00d67a/${GITHUB_USERNAME}`}
-              alt={`${GITHUB_USERNAME}'s GitHub contribution graph`}
-              className="w-full min-w-[640px]"
-              loading="lazy"
-            />
+            GitHub Activity
           </a>
+          <div className="overflow-x-auto p-5 sm:p-6">
+            <GithubActivityCalendar username={GITHUB_USERNAME} />
+          </div>
         </div>
 
         {/* Codeforces Contest Rating */}
