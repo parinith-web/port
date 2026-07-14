@@ -11,9 +11,17 @@ interface Project {
 
 const projects: Project[] = [
   {
+    name: "GATEquest",
+    description:
+      "A full-stack GATE exam prep platform - Roadmaps, quests with live leaderboards and Pulse, a real-time community feed with a live post-contest debrief chat.",
+    cover: "/projects/gatequest-cover.png",
+    github: "https://github.com/parinith-web/GATEquest",
+    live: "https://gatequest.vercel.app/",
+  },
+  {
     name: "Feather",
     description:
-      "An AI background remover — upload a photo, cut it out in seconds, swap the background, and export.",
+      "An AI background remover - Upload a photo, cut it out in seconds, swap the background, and export.",
     cover: "/projects/feather-cover.png",
     github: "https://github.com/parinith-web/feather",
     live: "https://feather-bg.vercel.app/",
@@ -65,7 +73,7 @@ function ProjectCard({ project }: { project: Project }) {
         <h3 className="text-xl font-extrabold tracking-[-0.5px] text-white sm:text-2xl">
           {project.name}
         </h3>
-        <p className="text-sm leading-relaxed text-white/70">
+        <p className="text-sm leading-relaxed text-white/70 whitespace-pre-line">
           {project.description}
         </p>
       </div>
