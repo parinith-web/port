@@ -107,6 +107,20 @@
     scroll-behavior: smooth;
   }
 
+  /* The layout was designed and tested at 90% browser zoom, so bake that
+     in as the default on desktop-sized viewports instead of relying on
+     everyone manually zooming out. Left off on small screens since mobile
+     browsers don't expose the same zoom control and shrinking further
+     there would just make touch targets and text smaller. `zoom` is
+     supported in Chromium and current Firefox/Safari; browsers that don't
+     support it simply render at 100%, which just means visitors are back
+     to the un-zoomed layout rather than seeing anything broken. */
+  @media (min-width: 1024px) {
+    html {
+      zoom: 90%;
+    }
+  }
+
   body {
     @apply bg-background text-foreground;
   }
