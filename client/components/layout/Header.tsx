@@ -29,7 +29,7 @@ export default function Header() {
           href="/resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex shrink-0 items-center gap-2 rounded-md bg-white px-4 py-2 text-sm font-semibold tracking-normal text-black transition-colors hover:bg-white/90"
+          className="inline-flex shrink-0 items-center gap-2 rounded-md border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold tracking-normal text-white transition-colors hover:bg-white/10"
         >
           <FileText className="h-4 w-4" strokeWidth={2} />
           Resume
