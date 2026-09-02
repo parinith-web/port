@@ -11,6 +11,14 @@ interface Project {
 
 const projects: Project[] = [
   {
+    name: "Orbital Games",
+    description:
+      "A social gaming hub - Voice/video rooms, real-time chat, and party games like Anomaly, built for hanging out and playing with friends online.",
+    cover: "/projects/orbital-cover.png",
+    github: "https://github.com/parinith-web/orbital",
+    live: "https://orbital-games.vercel.app/",
+  },
+  {
     name: "GATEquest",
     description:
       "A full-stack GATE exam prep platform - Roadmaps, quests with live leaderboards and Pulse, a real-time community feed with a live post-contest debrief chat.",
