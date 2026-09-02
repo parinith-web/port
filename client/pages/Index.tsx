@@ -44,7 +44,7 @@ export default function Index() {
             <br />
             Reddy
           </h1>
-          <p className="whitespace-nowrap text-sm font-medium capitalize leading-6 tracking-[1.6px] text-white sm:text-base">
+          <p className="whitespace-nowrap text-sm font-medium capitalize leading-6 text-white sm:text-base">
             Creative developer, open source contributor, problem solver
           </p>
         </div>
