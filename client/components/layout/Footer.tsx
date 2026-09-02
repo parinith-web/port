@@ -3,7 +3,7 @@ import PixelBlast from "@/components/PixelBlast";
 
 export default function Footer() {
   return (
-    <footer className="relative flex h-72 w-full flex-col bg-black md:flex-row">
+    <footer className="relative flex h-72 w-full flex-col bg-neutral-900 md:flex-row">
       <div className="relative z-[1001] flex flex-1 flex-col items-center justify-center gap-3 p-8 text-center sm:p-10 lg:p-12">
         <div>
           <span className="block text-3xl font-extrabold tracking-[-1px] text-white sm:text-4xl">
@@ -38,7 +38,7 @@ export default function Footer() {
         <PixelBlast
           variant="square"
           pixelSize={4}
-          color="#ffffff"
+          color="#000000"
           patternScale={2}
           patternDensity={1}
           enableRipples
