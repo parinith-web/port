@@ -250,11 +250,9 @@ export default function SkillsSection() {
                 className="absolute font-medium leading-[1.1] tracking-[-0.035em]"
                 style={{ left: "8%", top: "54%", width: "50%", fontSize: "4cqw" }}
               >
-                Languages, frameworks
+                The stack behind
                 <br />
-                and tools I
-                <br />
-                <span className="whitespace-nowrap"><Scale>build with.</Scale></span>
+                <span className="whitespace-nowrap">every product I <Scale>ship.</Scale></span>
               </p>
 
               {/* floating topic pills */}
@@ -289,11 +287,9 @@ export default function SkillsSection() {
           style={{ background: "linear-gradient(180deg,#e4e4ea,#f3f3f8)" }}
         >
           <p className="text-2xl font-medium leading-tight tracking-[-0.02em] sm:text-3xl">
-            Languages, frameworks
+            The stack behind
             <br />
-            and tools I
-            <br />
-            <span className="whitespace-nowrap"><Scale>build with.</Scale></span>
+            <span className="whitespace-nowrap">every product I <Scale>ship.</Scale></span>
           </p>
           <div className="mt-6 flex flex-wrap gap-2.5 text-xs sm:text-sm">
             {domains.map((d, i) => (
