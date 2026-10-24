@@ -111,7 +111,7 @@ export default function ProjectsSection() {
   return (
     <section id="projects" className="mt-28 scroll-mt-24 lg:mt-40">
       <div className={PANEL_CLASS} style={{ fontFamily: FONT }}>
-        <SectionHeading lead="My" title="Projects" />
+        <SectionHeading title="My Projects" />
 
         <div className="mt-12 grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mt-16 lg:gap-x-10">
           {projects.map((project) => (

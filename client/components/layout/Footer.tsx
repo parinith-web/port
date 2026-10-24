@@ -64,7 +64,7 @@ export default function Footer() {
         <defs>
           {GRAIN_TIERS.flatMap((t) =>
             [
-              { key: "white", color: "#b9bec2", std: t.std * 0.75, freq: t.freq, seed: 7, slope: 6, icpt: -2.6 },
+              { key: "white", color: "#6e7478", std: t.std * 0.75, freq: t.freq, seed: 7, slope: 6, icpt: -2.6 },
               { key: "ink", color: "#000000", std: t.std * 0.75, freq: t.freq * 0.9, seed: 11, slope: 6, icpt: -2.6 },
               { key: "shadow", color: "#000000", std: t.std * 1.5, freq: t.freq * 0.82, seed: 3, slope: 2.6, icpt: -0.8 },
             ].map((f) => (
