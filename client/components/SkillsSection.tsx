@@ -111,12 +111,12 @@ const domains: Domain[] = [
 
 /* where each topic pill floats inside the folder (% of folder width / height) */
 const PILL_POS: [number, number][] = [
-  [8, 34], // Languages
-  [37, 30], // Frontend
-  [74, 45], // Backend
-  [61, 60], // Databases
-  [14, 84], // Auth & Cloud
-  [62, 83], // Tools & DevOps
+  [7, 34], // Languages
+  [37, 31], // Frontend
+  [73, 47], // Backend
+  [62, 61], // Databases
+  [8, 88], // Auth & Cloud
+  [64, 83], // Tools & DevOps
 ];
 const ROT = [-5, 3, -2, 5, -4, 2, -3];
 const DY = [0, -4, 3, -2, 4, -1, 2];
@@ -126,9 +126,6 @@ const SCRIPT = "'Mrs Saint Delafield', 'Brush Script MT', cursive";
 const Scale = () => (
   <span className="relative inline-block" style={{ transform: "rotate(-5deg) translateY(0.04em)", marginLeft: "0.05em" }}>
     <span style={{ fontFamily: SCRIPT, color: GREEN, fontSize: "2.1em", lineHeight: 0.6, letterSpacing: "0.01em" }}>scale.</span>
-    <svg viewBox="0 0 220 14" preserveAspectRatio="none" className="absolute -bottom-[0.05em] left-[-18%] h-[0.22em] w-[125%]" aria-hidden>
-      <path d="M2 10C40 3 110 12 218 3" fill="none" stroke={GREEN} strokeWidth="2.2" strokeLinecap="round" />
-    </svg>
   </span>
 );
 
@@ -183,7 +180,7 @@ export default function SkillsSection() {
         <div className="mx-auto mt-12 hidden w-full max-w-[1054px] lg:block">
           <div
             className="relative w-full"
-            style={{ containerType: "inline-size", aspectRatio: "1054 / 697" } as CSSProperties}
+            style={{ containerType: "inline-size", aspectRatio: "1054 / 662" } as CSSProperties}
           >
             <div className="absolute inset-0" style={{ fontSize: "1.35cqw" }}>
               {/* back plate */}
@@ -192,14 +189,15 @@ export default function SkillsSection() {
                 style={{ background: "linear-gradient(180deg,#dcdce3,#ececf2)" }}
               />
               <div
-                className="absolute inset-x-[1.9%] top-[2.2%] h-[30%] rounded-[2.4em]"
-                style={{ background: "linear-gradient(180deg,#d3d3db,#e2e2e9)" }}
+                className="absolute inset-x-[1.9%] top-[2.8%] rounded-[2.4em]"
+                style={{ height: "19.8cqw", background: "linear-gradient(180deg,#d3d3db,#e2e2e9)" }}
               />
 
               {/* decorative cards peeking out (sink away on hover) */}
               <div
-                className="absolute inset-0 transition-all duration-500 motion-reduce:transition-none"
+                className="absolute left-0 top-0 w-full transition-all duration-500 motion-reduce:transition-none"
                 style={{
+                  height: "66.1cqw",
                   transform: active === null ? "none" : "translateY(18%)",
                   opacity: active === null ? 1 : 0,
                 }}
@@ -226,18 +224,18 @@ export default function SkillsSection() {
                   </div>
                 </div>
 
-                {/* 200 OK (big italic lettering, peeks above the dark cards) */}
+                {/* JWT (big lettering, peeks above the cards in front) */}
                 <div
                   className="absolute overflow-hidden rounded-[1.3em] shadow-[0_12px_28px_-8px_rgba(20,20,40,0.5)]"
                   style={{
-                    left: "37%", top: "2%", width: "27%", aspectRatio: "1.5/1", transform: "rotate(3deg)",
-                    background: "linear-gradient(135deg,#34f58a,#0c9a49)",
+                    left: "41%", top: "-4%", width: "27%", aspectRatio: "1.5/1", transform: "rotate(3deg)",
+                    background: "linear-gradient(135deg,#fff5df,#ffd89b)",
                   }}
                 >
-                  <div className="absolute left-[7%] top-[3%] whitespace-nowrap text-[4.8em] font-black italic leading-none tracking-[-0.06em] text-white/95">
-                    200 OK
+                  <div className="absolute left-[7%] top-[3%] whitespace-nowrap text-[4.6em] font-black italic leading-none tracking-[-0.06em] text-[#b45309]">
+                    JWT
                   </div>
-                  <div className="absolute left-[8%] top-[52%] font-mono text-[0.8em] font-semibold text-black/45">POST /v1/messages</div>
+                  <div className="absolute left-[8%] top-[55%] font-mono text-[0.8em] font-semibold text-[#92400e]/70">Bearer eyJhbGciOi…</div>
                 </div>
 
                 {/* system diagram (left) */}
@@ -267,51 +265,45 @@ export default function SkillsSection() {
                   </div>
                 </div>
 
-                {/* code editor */}
+                {/* {API} card */}
                 <div
-                  className="absolute overflow-hidden rounded-[1.3em] border-[0.25em] border-white bg-[#0e0f13] font-mono shadow-[0_12px_28px_-8px_rgba(20,20,40,0.55)]"
-                  style={{ left: "29%", top: "9%", width: "28%", aspectRatio: "1.5/1", transform: "rotate(-2deg)" }}
+                  className="absolute overflow-hidden rounded-[1.3em] shadow-[0_12px_28px_-8px_rgba(20,20,40,0.5)]"
+                  style={{
+                    left: "27%", top: "8%", width: "28%", aspectRatio: "1.5/1", transform: "rotate(-3deg)",
+                    background: "linear-gradient(135deg,#1fe06e,#0c9a49)",
+                  }}
                 >
-                  <div className="flex items-center gap-[0.4em] border-b border-white/10 px-[0.9em] py-[0.6em]">
-                    <i className="h-[0.6em] w-[0.6em] rounded-full bg-[#ff5f57]" />
-                    <i className="h-[0.6em] w-[0.6em] rounded-full bg-[#febc2e]" />
-                    <i className="h-[0.6em] w-[0.6em] rounded-full bg-[#28c840]" />
-                    <span className="ml-[0.6em] text-[0.7em] text-white/40">mcp-server.ts</span>
-                  </div>
-                  <pre className="px-[1em] pt-[0.7em] text-[0.8em] leading-[1.6] text-white/80">
-                    server.<span className="text-[#60a5fa]">tool</span>(<span className="text-[#fbbf24]">"get_user"</span>,{"\n"}
-                    {"  "}{"{"} id: z.<span className="text-[#4dea8a]">string</span>() {"}"},{"\n"}
-                    {"  "}<span className="text-[#c084fc]">async</span> ({"{"} id {"}"}) =&gt; api.<span className="text-[#60a5fa]">get</span>(id){"\n"}
-                    );
-                  </pre>
+                  <span className="absolute left-[8%] top-[6%] whitespace-nowrap text-[5.6em] font-black italic leading-none tracking-tighter text-white/90">
+                    {"{API}"}
+                  </span>
                 </div>
 
                 {/* terminal (sits in the notch) */}
                 <div
-                  className="absolute overflow-hidden rounded-[1.5em] border-[0.25em] border-white/90 bg-[#0b0b0d] font-mono shadow-[0_14px_30px_-8px_rgba(20,20,40,0.6)]"
+                  className="absolute overflow-hidden rounded-[1.5em] border-[0.25em] border-white bg-white font-mono shadow-[0_14px_30px_-8px_rgba(20,20,40,0.6)]"
                   style={{ left: "52%", top: "13%", width: "33%", aspectRatio: "1.5/1", transform: "rotate(1deg)" }}
                 >
                   <div
                     className="absolute inset-0"
-                    style={{ background: "radial-gradient(ellipse at 50% 110%,rgba(31,224,110,0.25),transparent 65%)" }}
+                    style={{ background: "radial-gradient(ellipse at 50% 110%,rgba(34,197,94,0.14),transparent 65%)" }}
                   />
-                  <div className="relative flex items-center gap-[0.4em] border-b border-white/10 px-[0.9em] py-[0.6em]">
-                    <i className="h-[0.6em] w-[0.6em] rounded-full bg-white/25" />
-                    <i className="h-[0.6em] w-[0.6em] rounded-full bg-white/25" />
-                    <i className="h-[0.6em] w-[0.6em] rounded-full bg-white/25" />
-                    <span className="ml-[0.6em] text-[0.7em] text-white/40">~/api</span>
+                  <div className="relative flex items-center gap-[0.4em] border-b border-black/10 px-[0.9em] py-[0.6em]">
+                    <i className="h-[0.6em] w-[0.6em] rounded-full bg-black/15" />
+                    <i className="h-[0.6em] w-[0.6em] rounded-full bg-black/15" />
+                    <i className="h-[0.6em] w-[0.6em] rounded-full bg-black/15" />
+                    <span className="ml-[0.6em] text-[0.7em] text-black/40">~/api</span>
                   </div>
-                  <pre className="relative px-[1em] pt-[0.7em] text-[0.82em] leading-[1.7] text-white/80">
-                    <span className="text-[#4dea8a]">$</span> curl -X POST /v1/messages{"\n"}
-                    <span className="text-white/40">{"{"} "status": "ok" {"}"}</span>{"\n"}
-                    <span className="text-[#4dea8a]">✔</span> 200 OK{"  "}<span className="text-white/40">142ms</span>{"\n"}
-                    <span className="text-[#4dea8a]">✔</span> mcp{"     "}<span className="text-white/40">3 tools</span>
+                  <pre className="relative px-[1em] pt-[0.7em] text-[0.82em] leading-[1.7] text-[#374151]">
+                    <span className="text-[#16a34a]">$</span> curl -X POST /v1/messages{"\n"}
+                    <span className="text-black/40">{"{"} "status": "ok" {"}"}</span>{"\n"}
+                    <span className="text-[#16a34a]">✔</span> 200 OK{"  "}<span className="text-black/40">142ms</span>{"\n"}
+                    <span className="text-[#16a34a]">✔</span> mcp{"     "}<span className="text-black/40">3 tools</span>
                   </pre>
                 </div>
               </div>
 
               {/* skill cards that rise out of the folder */}
-              <div className="pointer-events-none absolute inset-x-[4%] top-0 h-[27%]">
+              <div className="pointer-events-none absolute inset-x-[4%] top-0" style={{ height: "17.8cqw" }}>
                 {domains.map((d, di) => (
                   <div key={d.title} className="absolute inset-0 flex items-end justify-center gap-[1.2em]">
                     {d.skills.map(({ name, Icon }, i) => {
@@ -345,7 +337,7 @@ export default function SkillsSection() {
 
               {/* folder front with the notch */}
               <svg
-                viewBox="0 0 1054 540"
+                viewBox="0 0 1054 505"
                 className="pointer-events-none absolute bottom-0 left-0 w-full"
                 style={{ filter: "drop-shadow(0 -4px 14px rgba(20,20,40,0.12))" }}
                 aria-hidden
@@ -358,7 +350,7 @@ export default function SkillsSection() {
                   </linearGradient>
                 </defs>
                 <path
-                  d="M0 44C0 18 18 0 44 0L505 0C535 0 548 14 556 40C566 74 586 90 620 90L818 90C852 90 872 74 882 40C890 14 903 0 933 0L1010 0C1036 0 1054 18 1054 44L1054 496C1054 522 1036 540 1010 540L44 540C18 540 0 522 0 496Z"
+                  d="M0 44C0 18 18 0 44 0L505 0C535 0 548 14 556 40C566 74 586 90 620 90L818 90C852 90 872 74 882 40C890 14 903 0 933 0L1010 0C1036 0 1054 18 1054 44L1054 461C1054 487 1036 505 1010 505L44 505C18 505 0 487 0 461Z"
                   fill="url(#folderFront)"
                   stroke="#fff"
                   strokeOpacity="0.8"
@@ -369,7 +361,7 @@ export default function SkillsSection() {
               {/* tagline */}
               <p
                 className="absolute font-medium leading-[1.1] tracking-[-0.035em]"
-                style={{ left: "8%", top: "45%", width: "50%", fontSize: "4cqw" }}
+                style={{ left: "8%", top: "47%", width: "50%", fontSize: "4cqw" }}
               >
                 Full-stack products
                 <br />
