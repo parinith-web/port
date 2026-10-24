@@ -125,7 +125,7 @@ const GREEN = "#16a34a";
 const SCRIPT = "'Mrs Saint Delafield', 'Brush Script MT', cursive";
 
 const Scale = ({ children = "scale." }: { children?: string }) => (
-  <span className="relative inline-block" style={{ transform: "rotate(-5deg) translateY(0.22em)", marginLeft: "0.05em" }}>
+  <span className="relative inline-block" style={{ transform: "rotate(-5deg) translateY(0.04em)", marginLeft: "0.05em" }}>
     <span style={{ fontFamily: SCRIPT, color: GREEN, fontSize: "2.1em", lineHeight: 0.6, letterSpacing: "0.01em" }}>{children}</span>
   </span>
 );
@@ -248,7 +248,7 @@ export default function SkillsSection() {
               {/* tagline */}
               <p
                 className="absolute font-medium leading-[1.1] tracking-[-0.035em]"
-                style={{ left: "8%", top: "54%", width: "50%", fontSize: "4cqw" }}
+                style={{ left: "8%", top: "59.5%", width: "50%", fontSize: "4cqw" }}
               >
                 The stack behind
                 <br />
@@ -283,7 +283,7 @@ export default function SkillsSection() {
 
         {/* ===== mobile / tablet ===== */}
         <div
-          className="mx-auto mt-10 max-w-xl rounded-[2rem] p-5 sm:p-8 lg:hidden"
+          className="mx-auto mt-10 max-w-xl rounded-[2rem] px-5 pb-5 pt-10 sm:px-8 sm:pb-8 sm:pt-14 lg:hidden"
           style={{ background: "linear-gradient(180deg,#e4e4ea,#f3f3f8)" }}
         >
           <p className="text-2xl font-medium leading-tight tracking-[-0.02em] sm:text-3xl">

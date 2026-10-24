@@ -1,6 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { GithubIcon } from "@/components/icons/SocialIcons";
-import SectionHeading, { GREEN, PANEL_CLASS, SECTION_FONT } from "@/components/SectionHeading";
+import SectionHeading, { PANEL_CLASS, SECTION_FONT } from "@/components/SectionHeading";
 
 interface Project {
   name: string;
@@ -90,7 +90,7 @@ function ProjectCard({ project }: { project: Project }) {
           <h3 className="text-[24px] font-medium leading-tight tracking-[-0.02em] text-white sm:text-[26px]">
             {project.name}
           </h3>
-          <p className="text-[15px] text-white/50">{project.description}</p>
+          <p className="text-[15px] text-white/50">- {project.description}</p>
         </div>
         <div className="mt-3 flex flex-wrap gap-2">
           {project.tags.map((t) => (
@@ -98,7 +98,6 @@ function ProjectCard({ project }: { project: Project }) {
               key={t}
               className="inline-flex items-center gap-1.5 rounded-lg bg-white/[0.06] px-2.5 py-1.5 text-[12.5px] font-medium leading-none tracking-[-0.005em] text-white/75 ring-1 ring-inset ring-white/[0.06] transition-colors hover:bg-white/10"
             >
-              <span className="h-1.5 w-1.5 rounded-full" style={{ background: GREEN }} />
               {t}
             </span>
           ))}
@@ -112,7 +111,7 @@ export default function ProjectsSection() {
   return (
     <section id="projects" className="mt-28 scroll-mt-24 lg:mt-40">
       <div className={PANEL_CLASS} style={{ fontFamily: FONT }}>
-        <SectionHeading title="Projects" />
+        <SectionHeading lead="My" title="Projects" />
 
         <div className="mt-12 grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mt-16 lg:gap-x-10">
           {projects.map((project) => (
