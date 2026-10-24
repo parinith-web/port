@@ -125,7 +125,7 @@ const GREEN = "#16a34a";
 const SCRIPT = "'Mrs Saint Delafield', 'Brush Script MT', cursive";
 
 const Scale = ({ children = "scale." }: { children?: string }) => (
-  <span className="relative inline-block" style={{ transform: "rotate(-5deg) translateY(0.04em)", marginLeft: "0.05em" }}>
+  <span className="relative inline-block" style={{ transform: "rotate(-5deg) translateY(0.22em)", marginLeft: "0.05em" }}>
     <span style={{ fontFamily: SCRIPT, color: GREEN, fontSize: "2.1em", lineHeight: 0.6, letterSpacing: "0.01em" }}>{children}</span>
   </span>
 );

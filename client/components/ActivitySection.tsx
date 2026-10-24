@@ -48,7 +48,7 @@ export default function ActivitySection() {
             subtitle="Contributions over the last year"
             href={`https://github.com/${GITHUB_USERNAME}`}
           >
-            <div className="overflow-x-auto">
+            <div>
               <GithubActivityCalendar username={GITHUB_USERNAME} />
             </div>
           </Block>

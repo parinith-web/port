@@ -155,7 +155,7 @@ export default function GithubActivityCalendar({
     gridWidth > 0
       ? gridWidth / (numWeeks + (numWeeks - 1) * GAP_RATIO)
       : 12;
-  const cellSize = Math.min(Math.max(rawCellSize, 9), 22);
+  const cellSize = Math.min(Math.max(rawCellSize, 3), 22);
   const cellGap = cellSize * GAP_RATIO;
   const labelColWidth = 32;
 
@@ -170,7 +170,7 @@ export default function GithubActivityCalendar({
         </p>
       )}
 
-      <div className="flex w-full min-w-[640px] gap-3">
+      <div className="flex w-full gap-3">
         {/* Day-of-week labels */}
         <div
           className="flex flex-shrink-0 flex-col text-[12px] text-white/45"

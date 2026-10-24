@@ -86,16 +86,19 @@ function ProjectCard({ project }: { project: Project }) {
       </div>
 
       <div className="mt-5">
-        <h3 className="text-[24px] font-medium leading-tight tracking-[-0.02em] text-white sm:text-[26px]">
-          {project.name}
-        </h3>
-        <p className="mt-1 text-[15px] text-white/55">{project.description}</p>
+        <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+          <h3 className="text-[24px] font-medium leading-tight tracking-[-0.02em] text-white sm:text-[26px]">
+            {project.name}
+          </h3>
+          <p className="text-[15px] text-white/50">{project.description}</p>
+        </div>
         <div className="mt-3 flex flex-wrap gap-2">
           {project.tags.map((t) => (
             <span
               key={t}
-              className="rounded-full border border-white/15 px-3 py-1 text-[11px] font-semibold uppercase leading-none tracking-[0.08em] text-white/60"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-white/[0.06] px-2.5 py-1.5 text-[12.5px] font-medium leading-none tracking-[-0.005em] text-white/75 ring-1 ring-inset ring-white/[0.06] transition-colors hover:bg-white/10"
             >
+              <span className="h-1.5 w-1.5 rounded-full" style={{ background: GREEN }} />
               {t}
             </span>
           ))}
