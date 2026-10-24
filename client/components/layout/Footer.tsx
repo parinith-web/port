@@ -1,3 +1,19 @@
+import { ArrowUpRight, Mail } from "lucide-react";
+import {
+  CodeforcesIcon,
+  GithubIcon,
+  LeetCodeIcon,
+} from "@/components/icons/SocialIcons";
+
+/* ---- Edit your social links here ---- */
+const SOCIALS = [
+  { label: "Resume", href: "/resume.pdf", Icon: null },
+  { label: "GitHub", href: "https://github.com/parinith-web", Icon: GithubIcon },
+  { label: "LeetCode", href: "https://leetcode.com/u/YOUR_LEETCODE_USERNAME", Icon: LeetCodeIcon }, // TODO: set your username
+  { label: "Codeforces", href: "https://codeforces.com/profile/parinithreddymavurapu", Icon: CodeforcesIcon },
+  { label: "Mail", href: "mailto:YOUR_EMAIL@example.com", Icon: Mail }, // TODO: set your email
+];
+
 const WORD = "parinith";
 
 // A few strokes drop out of the white layer (a leg of the h and n, the stem of the t, the right
@@ -90,6 +106,28 @@ export default function Footer() {
           ))}
         </defs>
       </svg>
+
+      {/* socials */}
+      <nav
+        aria-label="Social links"
+        className="relative z-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 px-6 pt-16 sm:gap-x-12 lg:pt-24"
+      >
+        {SOCIALS.map(({ label, href, Icon }) => (
+          <a
+            key={label}
+            href={href}
+            target={href.startsWith("mailto:") ? undefined : "_blank"}
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-2 text-[17px] font-medium tracking-[-0.01em] text-white/65 transition-colors hover:text-white sm:text-[20px]"
+          >
+            {Icon && <Icon className="h-[18px] w-[18px] sm:h-5 sm:w-5" />}
+            {label}
+            {!Icon && (
+              <ArrowUpRight className="h-4 w-4 text-white/40 transition-colors group-hover:text-[#16a34a]" strokeWidth={2.25} />
+            )}
+          </a>
+        ))}
+      </nav>
 
       {/* giant wordmark */}
       <div className="relative select-none px-[2vw] pb-[1vw] pt-[3vw]" aria-hidden>

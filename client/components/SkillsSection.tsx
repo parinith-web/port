@@ -1,4 +1,5 @@
 import { Database } from "lucide-react";
+import SectionHeading from "@/components/SectionHeading";
 import { useState } from "react";
 import type { ComponentType, CSSProperties } from "react";
 import {
@@ -164,12 +165,7 @@ export default function SkillsSection() {
       >
         {/* heading */}
         <div className="flex flex-col items-center text-center">
-          <span className="rounded-full border border-black/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[1.5px] text-black/50">
-            Skills
-          </span>
-          <h2 className="mx-auto mt-5 max-w-[13ch] text-[2.5rem] font-medium leading-[1.02] tracking-[-0.035em] sm:text-6xl lg:text-7xl">
-            Building <span style={{ color: GREEN }}>Reliable</span> Software.
-          </h2>
+          <SectionHeading title="Skills" dark />
           <p className="mt-4 text-sm text-black/45 sm:text-base">
             <span className="hidden lg:inline">Hover a topic to pull its stack out of the folder.</span>
             <span className="lg:hidden">Tap a topic to see its stack.</span>

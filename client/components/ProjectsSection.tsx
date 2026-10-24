@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { GithubIcon } from "@/components/icons/SocialIcons";
+import SectionHeading, { GREEN, PANEL_CLASS, SECTION_FONT } from "@/components/SectionHeading";
 
 interface Project {
   name: string;
@@ -49,12 +50,12 @@ const projects: Project[] = [
   },
 ];
 
-const FONT = "'Inter Tight', system-ui, sans-serif";
+const FONT = SECTION_FONT;
 
 function ProjectCard({ project }: { project: Project }) {
   return (
     <div className="flex flex-col" style={{ fontFamily: FONT }}>
-      <div className="group relative w-full overflow-hidden rounded-[18px] bg-black">
+      <div className="group relative w-full overflow-hidden rounded-[1.5rem] bg-black">
         <img
           src={project.cover}
           alt={`${project.name} cover`}
@@ -85,7 +86,7 @@ function ProjectCard({ project }: { project: Project }) {
       </div>
 
       <div className="mt-5">
-        <h3 className="text-[24px] font-normal leading-tight tracking-[-0.02em] text-white sm:text-[26px]">
+        <h3 className="text-[24px] font-medium leading-tight tracking-[-0.02em] text-white sm:text-[26px]">
           {project.name}
         </h3>
         <p className="mt-1 text-[15px] text-white/55">{project.description}</p>
@@ -93,7 +94,7 @@ function ProjectCard({ project }: { project: Project }) {
           {project.tags.map((t) => (
             <span
               key={t}
-              className="rounded-full border border-white/20 px-3 py-1 text-[12px] leading-none text-white/70"
+              className="rounded-full border border-white/15 px-3 py-1 text-[11px] font-semibold uppercase leading-none tracking-[0.08em] text-white/60"
             >
               {t}
             </span>
@@ -106,18 +107,15 @@ function ProjectCard({ project }: { project: Project }) {
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="mt-32 scroll-mt-24 lg:mt-44">
-      <h2
-        className="text-center text-2xl font-bold uppercase leading-tight tracking-[-0.01em] text-white sm:text-3xl"
-        style={{ fontFamily: FONT }}
-      >
-        My Projects
-      </h2>
+    <section id="projects" className="mt-28 scroll-mt-24 lg:mt-40">
+      <div className={PANEL_CLASS} style={{ fontFamily: FONT }}>
+        <SectionHeading title="Projects" />
 
-      <div className="mt-12 grid grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mt-16">
-        {projects.map((project) => (
-          <ProjectCard key={project.name} project={project} />
-        ))}
+        <div className="mt-12 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:mt-16">
+          {projects.map((project) => (
+            <ProjectCard key={project.name} project={project} />
+          ))}
+        </div>
       </div>
     </section>
   );

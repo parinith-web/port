@@ -12,26 +12,11 @@ interface ContributionsResponse {
 }
 
 const LEVEL_STYLES: Record<number, { bg: string; shadow: string }> = {
-  0: {
-    bg: "rgba(255,255,255,0.06)",
-    shadow: "inset 0 1px 0 rgba(255,255,255,0.04)",
-  },
-  1: {
-    bg: "#0e4429",
-    shadow: "0 1px 2px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06)",
-  },
-  2: {
-    bg: "#006d32",
-    shadow: "0 1px 3px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.08)",
-  },
-  3: {
-    bg: "#26a641",
-    shadow: "0 1px 4px rgba(0,214,122,0.35), inset 0 1px 0 rgba(255,255,255,0.12)",
-  },
-  4: {
-    bg: "#39d353",
-    shadow: "0 1px 6px rgba(57,211,83,0.55), inset 0 1px 0 rgba(255,255,255,0.18)",
-  },
+  0: { bg: "rgba(255,255,255,0.07)", shadow: "none" },
+  1: { bg: "#0e4429", shadow: "none" },
+  2: { bg: "#16803c", shadow: "none" },
+  3: { bg: "#16a34a", shadow: "none" },
+  4: { bg: "#4ade80", shadow: "none" },
 };
 
 const MONTH_NAMES = [
@@ -151,12 +136,12 @@ export default function GithubActivityCalendar({
     : null;
 
   if (status === "loading") {
-    return <p className="text-sm text-white/50">Loading contribution graph…</p>;
+    return <p className="text-[15px] text-white/55">Loading contribution graph…</p>;
   }
 
   if (status === "error" || !data) {
     return (
-      <p className="text-sm text-white/50">
+      <p className="text-[15px] text-white/55">
         Couldn't load GitHub contributions right now.
       </p>
     );
@@ -175,18 +160,20 @@ export default function GithubActivityCalendar({
   const labelColWidth = 32;
 
   return (
-    <div>
+    <div style={{ fontFamily: "'Inter Tight', system-ui, sans-serif" }}>
       {totalCount !== null && (
-        <p className="mb-4 text-sm text-white/50">
-          <span className="font-semibold text-white/80">{totalCount}</span>{" "}
-          contributions in the last year
+        <p className="mb-5 flex items-baseline gap-3">
+          <span className="text-[44px] font-medium leading-none tracking-[-0.03em] text-[#16a34a]">
+            {totalCount}
+          </span>
+          <span className="text-[15px] text-white/55">contributions</span>
         </p>
       )}
 
       <div className="flex w-full min-w-[640px] gap-3">
         {/* Day-of-week labels */}
         <div
-          className="flex flex-shrink-0 flex-col text-[11px] text-white/40"
+          className="flex flex-shrink-0 flex-col text-[12px] text-white/45"
           style={{
             width: labelColWidth,
             gap: cellGap,
@@ -207,7 +194,7 @@ export default function GithubActivityCalendar({
         <div className="min-w-0 flex-1" ref={gridWrapRef}>
           {/* Month labels */}
           <div
-            className="relative mb-1 text-[11px] text-white/40"
+            className="relative mb-1 text-[12px] text-white/45"
             style={{ height: 14 }}
           >
             {monthLabels.map(({ weekIndex, label }) => (
@@ -234,7 +221,7 @@ export default function GithubActivityCalendar({
                     <div
                       key={dayIndex}
                       title={`${day.count} contribution${day.count === 1 ? "" : "s"} on ${formatDate(day.date)}`}
-                      className="rounded-[3px] transition-transform duration-150 hover:scale-125 hover:z-10"
+                      className="rounded-[4px] transition-transform duration-150 hover:scale-125 hover:z-10"
                       style={{
                         width: cellSize,
                         height: cellSize,
@@ -256,12 +243,12 @@ export default function GithubActivityCalendar({
       </div>
 
       {/* Legend */}
-      <div className="mt-4 flex items-center justify-end gap-1.5 text-[11px] text-white/40">
+      <div className="mt-4 flex items-center justify-end gap-1.5 text-[12px] text-white/45">
         <span>Less</span>
         {[0, 1, 2, 3, 4].map((level) => (
           <div
             key={level}
-            className="rounded-[3px]"
+            className="rounded-[4px]"
             style={{
               width: cellSize,
               height: cellSize,
