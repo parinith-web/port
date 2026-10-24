@@ -1,4 +1,4 @@
-import { Database } from "lucide-react";
+import { Database, Fingerprint, KeyRound } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import { useState } from "react";
 import type { ComponentType, CSSProperties } from "react";
@@ -23,7 +23,6 @@ import {
   SiMysql,
   SiClerk,
   SiFirebase,
-  SiSupabase,
   SiConvex,
   SiGit,
   SiGithub,
@@ -61,7 +60,7 @@ const domains: Domain[] = [
   {
     title: "Frontend",
     skills: [
-      { name: "React", Icon: SiReact },
+      { name: "React.js", Icon: SiReact },
       { name: "Next.js", Icon: SiNextdotjs },
       { name: "HTML5", Icon: SiHtml5 },
       { name: "CSS3", Icon: SiCss },
@@ -89,10 +88,11 @@ const domains: Domain[] = [
   {
     title: "Auth & Cloud",
     skills: [
+      { name: "OAuth 2.0", Icon: KeyRound },
+      { name: "WebAuthn (Passkeys)", Icon: Fingerprint },
       { name: "Clerk", Icon: SiClerk },
       { name: "Firebase", Icon: SiFirebase },
-      { name: "Supabase", Icon: SiSupabase },
-      { name: "Convex", Icon: SiConvex },
+            { name: "Convex", Icon: SiConvex },
     ],
   },
   {

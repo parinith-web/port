@@ -62,7 +62,7 @@ export default function Hero() {
           <span className="crisp" aria-hidden>r</span>
           <span className="crisp -ml-[0.04em]" aria-hidden>i</span>
           <span className="block-n" aria-hidden>n</span>
-          <span className="halftone -ml-[0.06em]" aria-hidden>i</span>
+          <span className="halftone ml-[0.03em]" aria-hidden>i</span>
           <span className="halftone fade-far" aria-hidden>t</span>
           <span className="halftone fade-far -ml-[0.04em]" aria-hidden>h</span>
         </h1>
