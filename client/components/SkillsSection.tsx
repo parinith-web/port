@@ -224,20 +224,6 @@ export default function SkillsSection() {
                   </div>
                 </div>
 
-                {/* JWT (big lettering, peeks above the cards in front) */}
-                <div
-                  className="absolute overflow-hidden rounded-[1.3em] shadow-[0_12px_28px_-8px_rgba(20,20,40,0.5)]"
-                  style={{
-                    left: "41%", top: "-4%", width: "27%", aspectRatio: "1.5/1", transform: "rotate(3deg)",
-                    background: "linear-gradient(135deg,#fff5df,#ffd89b)",
-                  }}
-                >
-                  <div className="absolute left-[7%] top-[3%] whitespace-nowrap text-[4.6em] font-black italic leading-none tracking-[-0.06em] text-[#b45309]">
-                    JWT
-                  </div>
-                  <div className="absolute left-[8%] top-[55%] font-mono text-[0.8em] font-semibold text-[#92400e]/70">Bearer eyJhbGciOi…</div>
-                </div>
-
                 {/* system diagram (left) */}
                 <div
                   className="absolute overflow-hidden rounded-[1.3em] border-[0.25em] border-white bg-white shadow-[0_12px_28px_-8px_rgba(20,20,40,0.5)]"

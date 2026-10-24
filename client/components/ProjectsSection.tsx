@@ -5,6 +5,7 @@ interface Project {
   name: string;
   description: string;
   cover: string;
+  tags: string[];
   github: string;
   live: string;
 }
@@ -12,46 +13,52 @@ interface Project {
 const projects: Project[] = [
   {
     name: "Orbital Games",
+    tags: ["Gaming","Real-time","Full-stack"],
     description:
-      "A social gaming hub - Voice/video rooms, real-time chat, and party games like Anomaly, built for hanging out and playing with friends online.",
+      "Voice rooms and party games with friends.",
     cover: "/projects/orbital-cover.png",
     github: "https://github.com/parinith-web/orbital",
     live: "https://orbital-games.vercel.app/",
   },
   {
     name: "GATEquest",
+    tags: ["EdTech","Community","Full-stack"],
     description:
-      "A full-stack GATE exam prep platform - Roadmaps, quests with live leaderboards and Pulse, a real-time community feed with a live post-contest debrief chat.",
+      "GATE prep with live leaderboards.",
     cover: "/projects/gatequest-cover.png",
     github: "https://github.com/parinith-web/GATEquest",
     live: "https://gatequest.vercel.app/",
   },
   {
     name: "Feather",
+    tags: ["AI","Image tool","Web app"],
     description:
-      "An AI background remover - Upload a photo, cut it out in seconds, swap the background, and export.",
+      "AI background remover in seconds.",
     cover: "/projects/feather-cover.png",
     github: "https://github.com/parinith-web/feather",
     live: "https://feather-bg.vercel.app/",
   },
   {
     name: "Nest",
+    tags: ["Extension","Productivity"],
     description:
-      "A browser extension that organizes Reddit saved posts into custom collections for faster retrieval.",
+      "Organize Reddit saved posts.",
     cover: "/projects/nest-cover.png",
     github: "https://github.com/parinith-web/nest",
     live: "https://nest-organizer.vercel.app/",
   },
 ];
 
+const FONT = "'Inter Tight', system-ui, sans-serif";
+
 function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="flex flex-col overflow-hidden rounded-md border border-white/10 bg-white/[0.03]">
-      <div className="group relative w-full overflow-hidden bg-black">
+    <div className="flex flex-col" style={{ fontFamily: FONT }}>
+      <div className="group relative w-full overflow-hidden rounded-[18px] bg-black">
         <img
           src={project.cover}
           alt={`${project.name} cover`}
-          className="block w-full"
+          className="block aspect-[1.88/1] w-full object-cover object-top"
         />
 
         {/* Hover bar with Live / GitHub links */}
@@ -77,13 +84,21 @@ function ProjectCard({ project }: { project: Project }) {
         </div>
       </div>
 
-      <div className="flex flex-col gap-3 p-5 sm:p-6">
-        <h3 className="text-xl font-extrabold tracking-[-0.5px] text-white sm:text-2xl">
+      <div className="mt-5">
+        <h3 className="text-[24px] font-normal leading-tight tracking-[-0.02em] text-white sm:text-[26px]">
           {project.name}
         </h3>
-        <p className="text-sm leading-relaxed text-white/70 whitespace-pre-line">
-          {project.description}
-        </p>
+        <p className="mt-1 text-[15px] text-white/55">{project.description}</p>
+        <div className="mt-3 flex flex-wrap gap-2">
+          {project.tags.map((t) => (
+            <span
+              key={t}
+              className="rounded-full border border-white/20 px-3 py-1 text-[12px] leading-none text-white/70"
+            >
+              {t}
+            </span>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -92,11 +107,14 @@ function ProjectCard({ project }: { project: Project }) {
 export default function ProjectsSection() {
   return (
     <section id="projects" className="mt-32 scroll-mt-24 lg:mt-44">
-      <h2 className="text-center text-3xl font-extrabold tracking-[-1px] text-white sm:text-4xl lg:text-5xl">
-        Projects
+      <h2
+        className="text-center text-2xl font-bold uppercase leading-tight tracking-[-0.01em] text-white sm:text-3xl"
+        style={{ fontFamily: FONT }}
+      >
+        My Projects
       </h2>
 
-      <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:mt-12 lg:gap-8">
+      <div className="mt-12 grid grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mt-16">
         {projects.map((project) => (
           <ProjectCard key={project.name} project={project} />
         ))}
