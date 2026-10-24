@@ -3,15 +3,17 @@ import {
   CodeforcesIcon,
   GithubIcon,
   LeetCodeIcon,
+  LinkedinIcon,
 } from "@/components/icons/SocialIcons";
 
 /* ---- Edit your social links here ---- */
 const SOCIALS = [
   { label: "Resume", href: "/resume.pdf", Icon: null },
   { label: "GitHub", href: "https://github.com/parinith-web", Icon: GithubIcon },
-  { label: "LeetCode", href: "https://leetcode.com/u/YOUR_LEETCODE_USERNAME", Icon: LeetCodeIcon }, // TODO: set your username
+  { label: "LeetCode", href: "https://leetcode.com/u/parinith_reddy/", Icon: LeetCodeIcon },
   { label: "Codeforces", href: "https://codeforces.com/profile/parinithreddymavurapu", Icon: CodeforcesIcon },
-  { label: "Mail", href: "mailto:YOUR_EMAIL@example.com", Icon: Mail }, // TODO: set your email
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/parinith-reddy", Icon: LinkedinIcon },
+  { label: "Mail", href: "mailto:parinithreddymav@gmail.com", Icon: Mail },
 ];
 
 const WORD = "parinith";
@@ -110,7 +112,7 @@ export default function Footer() {
       {/* socials */}
       <nav
         aria-label="Social links"
-        className="relative z-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 px-6 pt-16 sm:gap-x-12 lg:pt-24"
+        className="relative z-10 flex flex-wrap items-center justify-center gap-x-10 gap-y-4 px-6 pt-16 sm:gap-x-16 lg:pt-24"
       >
         {SOCIALS.map(({ label, href, Icon }) => (
           <a
