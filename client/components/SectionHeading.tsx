@@ -11,7 +11,7 @@ export default function SectionHeading({
 }) {
   return (
     <h2
-      className={`text-center text-[1.75rem] font-bold uppercase leading-[1.02] tracking-tight sm:text-4xl lg:text-5xl ${
+      className={`text-center text-xl font-bold uppercase leading-[1.02] tracking-tight sm:text-2xl lg:text-[2rem] ${
         dark ? "text-[#161616]" : "text-white"
       }`}
     >
