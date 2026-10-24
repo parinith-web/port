@@ -112,12 +112,12 @@ const domains: Domain[] = [
 
 /* where each topic pill floats inside the folder (% of folder width / height) */
 const PILL_POS: [number, number][] = [
-  [7, 34], // Languages
-  [37, 31], // Frontend
-  [73, 47], // Backend
-  [62, 61], // Databases
-  [8, 88], // Auth & Cloud
-  [64, 83], // Tools & DevOps
+  [7, 43], // Languages
+  [37, 40.5], // Frontend
+  [73, 54.5], // Backend
+  [62, 66.5], // Databases
+  [8, 89], // Auth & Cloud
+  [64, 85], // Tools & DevOps
 ];
 const ROT = [-5, 3, -2, 5, -4, 2, -3];
 const DY = [0, -4, 3, -2, 4, -1, 2];
@@ -132,7 +132,7 @@ const Scale = ({ children = "scale." }: { children?: string }) => (
 
 export default function SkillsSection() {
   const [hovered, setHovered] = useState<number | null>(null);
-  const [pinned, setPinned] = useState<number | null>(null);
+  const [pinned, setPinned] = useState<number | null>(0);
   const active = hovered ?? pinned;
 
   const pillProps = (i: number) => ({
@@ -140,7 +140,7 @@ export default function SkillsSection() {
     onPointerLeave: (e: React.PointerEvent) => e.pointerType === "mouse" && setHovered(null),
     onFocus: () => setHovered(i),
     onBlur: () => setHovered(null),
-    onClick: () => setPinned((p) => (p === i ? null : i)),
+    onClick: () => setPinned(i),
     "aria-pressed": active === i,
   });
 
@@ -176,7 +176,7 @@ export default function SkillsSection() {
         <div className="mx-auto mt-12 hidden w-full max-w-[1054px] lg:block">
           <div
             className="relative w-full"
-            style={{ containerType: "inline-size", aspectRatio: "1054 / 662" } as CSSProperties}
+            style={{ containerType: "inline-size", aspectRatio: "1054 / 611" } as CSSProperties}
           >
             <div className="absolute inset-0" style={{ fontSize: "1.35cqw" }}>
               {/* back plate */}
@@ -185,107 +185,12 @@ export default function SkillsSection() {
                 style={{ background: "linear-gradient(180deg,#dcdce3,#ececf2)" }}
               />
               <div
-                className="absolute inset-x-[1.9%] top-[2.8%] rounded-[2.4em]"
-                style={{ height: "19.8cqw", background: "linear-gradient(180deg,#d3d3db,#e2e2e9)" }}
+                className="absolute inset-x-[1.9%] rounded-[2.4em]"
+                style={{ top: "1.5cqw", height: "24cqw", background: "linear-gradient(180deg,#d3d3db,#e2e2e9)" }}
               />
 
-              {/* decorative cards peeking out (sink away on hover) */}
-              <div
-                className="absolute left-0 top-0 w-full transition-all duration-500 motion-reduce:transition-none"
-                style={{
-                  height: "66.1cqw",
-                  transform: active === null ? "none" : "translateY(18%)",
-                  opacity: active === null ? 1 : 0,
-                }}
-                aria-hidden
-              >
-                {/* mcp servers (right, pokes above the folder) */}
-                <div
-                  className="absolute overflow-hidden rounded-[1.3em] border-[0.25em] border-white bg-white shadow-[0_12px_28px_-8px_rgba(20,20,40,0.5)]"
-                  style={{ left: "68%", top: "-3%", width: "28%", aspectRatio: "1.5/1", transform: "rotate(5deg)", borderRightColor: "#7c3aed", borderRightWidth: "1.4em" }}
-                >
-                  <div className="px-[1em] pt-[0.9em] font-mono text-[0.8em] leading-[2] text-[#161616]">
-                    <div className="mb-[0.2em] font-sans text-[0.9em] font-bold uppercase tracking-[0.12em] text-black/40">mcp servers</div>
-                    {[
-                      ["figma", "connected"],
-                      ["github", "connected"],
-                      ["postgres", "connected"],
-                    ].map(([n, st]) => (
-                      <div key={n} className="flex items-center gap-[0.7em]">
-                        <span className="h-[0.6em] w-[0.6em] rounded-full bg-[#16a34a]" />
-                        <span className="font-semibold">{n}</span>
-                        <span className="text-black/35">{st}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* system diagram (left) */}
-                <div
-                  className="absolute overflow-hidden rounded-[1.3em] border-[0.25em] border-white bg-white shadow-[0_12px_28px_-8px_rgba(20,20,40,0.5)]"
-                  style={{ left: "3%", top: "5%", width: "29%", aspectRatio: "1.5/1", transform: "rotate(-5deg)" }}
-                >
-                  <div className="px-[1em] pt-[0.9em] text-[0.75em] font-bold uppercase tracking-[0.12em] text-black/40">mcp architecture</div>
-                  <div className="mt-[0.8em] flex items-center justify-center gap-[0.4em]">
-                    {["LLM", "MCP", "API"].map((n, i) => (
-                      <div key={n} className="flex items-center gap-[0.4em]">
-                        <span
-                          className={`rounded-[0.5em] border px-[0.9em] py-[0.6em] text-[0.85em] font-bold ${
-                            i === 1 ? "border-[#16a34a] bg-[#16a34a] text-white" : "border-black/15 bg-white text-[#161616]"
-                          }`}
-                        >
-                          {n}
-                        </span>
-                        {i < 2 && <span className="text-[0.9em] font-bold text-black/30">→</span>}
-                      </div>
-                    ))}
-                  </div>
-                  <div className="mt-[0.7em] flex justify-center gap-[0.5em] text-[0.7em] font-semibold text-black/40">
-                    <span className="rounded-full border border-black/10 px-[0.8em] py-[0.3em]">tools</span>
-                    <span className="rounded-full border border-black/10 px-[0.8em] py-[0.3em]">resources</span>
-                    <span className="rounded-full border border-black/10 px-[0.8em] py-[0.3em]">prompts</span>
-                  </div>
-                </div>
-
-                {/* {API} card */}
-                <div
-                  className="absolute overflow-hidden rounded-[1.3em] shadow-[0_12px_28px_-8px_rgba(20,20,40,0.5)]"
-                  style={{
-                    left: "27%", top: "8%", width: "28%", aspectRatio: "1.5/1", transform: "rotate(-3deg)",
-                    background: "linear-gradient(135deg,#1fe06e,#0c9a49)",
-                  }}
-                >
-                  <span className="absolute left-[8%] top-[6%] whitespace-nowrap text-[5.6em] font-black italic leading-none tracking-tighter text-white/90">
-                    {"{API}"}
-                  </span>
-                </div>
-
-                {/* terminal (sits in the notch) */}
-                <div
-                  className="absolute overflow-hidden rounded-[1.5em] border-[0.25em] border-white bg-white font-mono shadow-[0_14px_30px_-8px_rgba(20,20,40,0.6)]"
-                  style={{ left: "52%", top: "13%", width: "33%", aspectRatio: "1.5/1", transform: "rotate(1deg)" }}
-                >
-                  <div
-                    className="absolute inset-0"
-                    style={{ background: "radial-gradient(ellipse at 50% 110%,rgba(34,197,94,0.14),transparent 65%)" }}
-                  />
-                  <div className="relative flex items-center gap-[0.4em] border-b border-black/10 px-[0.9em] py-[0.6em]">
-                    <i className="h-[0.6em] w-[0.6em] rounded-full bg-black/15" />
-                    <i className="h-[0.6em] w-[0.6em] rounded-full bg-black/15" />
-                    <i className="h-[0.6em] w-[0.6em] rounded-full bg-black/15" />
-                    <span className="ml-[0.6em] text-[0.7em] text-black/40">~/api</span>
-                  </div>
-                  <pre className="relative px-[1em] pt-[0.7em] text-[0.82em] leading-[1.7] text-[#374151]">
-                    <span className="text-[#16a34a]">$</span> curl -X POST /v1/messages{"\n"}
-                    <span className="text-black/40">{"{"} "status": "ok" {"}"}</span>{"\n"}
-                    <span className="text-[#16a34a]">✔</span> 200 OK{"  "}<span className="text-black/40">142ms</span>{"\n"}
-                    <span className="text-[#16a34a]">✔</span> mcp{"     "}<span className="text-black/40">3 tools</span>
-                  </pre>
-                </div>
-              </div>
-
               {/* skill cards that rise out of the folder */}
-              <div className="pointer-events-none absolute inset-x-[4%] top-0" style={{ height: "17.8cqw" }}>
+              <div className="pointer-events-none absolute inset-x-[4%] top-0" style={{ height: "22.2cqw" }}>
                 {domains.map((d, di) => (
                   <div key={d.title} className="absolute inset-0 flex items-end justify-center gap-[1.2em]">
                     {d.skills.map(({ name, Icon }, i) => {
@@ -293,10 +198,10 @@ export default function SkillsSection() {
                       return (
                         <div
                           key={name}
-                          className="flex flex-col items-center gap-[0.8em] rounded-[1.3em] border border-black/5 bg-white pt-[1.7em] shadow-[0_10px_24px_-6px_rgba(20,20,40,0.28)] motion-reduce:transition-none"
+                          className="flex flex-col items-center gap-[0.8em] rounded-[1.3em] border border-black/5 bg-white pt-[2.2em] shadow-[0_10px_24px_-6px_rgba(20,20,40,0.28)] motion-reduce:transition-none"
                           style={{
-                            width: "11.5cqw",
-                            height: "15.5cqw",
+                            width: "13.4cqw",
+                            height: "19cqw",
                             transform: on
                               ? `translateY(${DY[i % 7]}%) rotate(${ROT[i % 7]}deg)`
                               : "translateY(120%) rotate(0deg)",
@@ -306,8 +211,8 @@ export default function SkillsSection() {
                               : `transform 350ms ease-in ${i * 20}ms, opacity 300ms ease ${i * 20}ms`,
                           }}
                         >
-                          <Icon className="text-[#161616]" style={{ width: "5.28cqw", height: "5.28cqw" } as CSSProperties} />
-                          <span className="px-1 text-center font-semibold leading-tight text-[#161616]" style={{ fontSize: "1.44cqw" }}>
+                          <Icon className="text-[#161616]" style={{ width: "7.4cqw", height: "7.4cqw" } as CSSProperties} />
+                          <span className="px-1 text-center font-semibold leading-tight text-[#161616]" style={{ fontSize: "1.75cqw" }}>
                             {name}
                           </span>
                         </div>
@@ -319,7 +224,7 @@ export default function SkillsSection() {
 
               {/* folder front with the notch */}
               <svg
-                viewBox="0 0 1054 505"
+                viewBox="0 0 1054 400"
                 className="pointer-events-none absolute bottom-0 left-0 w-full"
                 style={{ filter: "drop-shadow(0 -4px 14px rgba(20,20,40,0.12))" }}
                 aria-hidden
@@ -332,7 +237,7 @@ export default function SkillsSection() {
                   </linearGradient>
                 </defs>
                 <path
-                  d="M0 44C0 18 18 0 44 0L505 0C535 0 548 14 556 40C566 74 586 90 620 90L818 90C852 90 872 74 882 40C890 14 903 0 933 0L1010 0C1036 0 1054 18 1054 44L1054 461C1054 487 1036 505 1010 505L44 505C18 505 0 487 0 461Z"
+                  d="M0 44C0 18 18 0 44 0L505 0C535 0 548 14 556 40C566 74 586 90 620 90L818 90C852 90 872 74 882 40C890 14 903 0 933 0L1010 0C1036 0 1054 18 1054 44L1054 356C1054 382 1036 400 1010 400L44 400C18 400 0 382 0 356Z"
                   fill="url(#folderFront)"
                   stroke="#fff"
                   strokeOpacity="0.8"
@@ -343,7 +248,7 @@ export default function SkillsSection() {
               {/* tagline */}
               <p
                 className="absolute font-medium leading-[1.1] tracking-[-0.035em]"
-                style={{ left: "8%", top: "47%", width: "50%", fontSize: "4cqw" }}
+                style={{ left: "8%", top: "54%", width: "50%", fontSize: "4cqw" }}
               >
                 Languages, frameworks
                 <br />
