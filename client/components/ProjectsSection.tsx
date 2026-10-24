@@ -111,7 +111,7 @@ export default function ProjectsSection() {
       <div className={PANEL_CLASS} style={{ fontFamily: FONT }}>
         <SectionHeading title="Projects" />
 
-        <div className="mt-12 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:mt-16">
+        <div className="mt-12 grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mt-16 lg:gap-x-10">
           {projects.map((project) => (
             <ProjectCard key={project.name} project={project} />
           ))}

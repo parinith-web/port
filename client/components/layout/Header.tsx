@@ -7,7 +7,7 @@ const navItems = [
 export default function Header() {
   return (
     <header
-      className="sticky top-0 z-50 w-full bg-black text-white"
+      className="relative z-50 w-full bg-black text-white"
       style={{ fontFamily: "'Inter Tight', system-ui, sans-serif" }}
     >
       <div className="mx-auto flex max-w-[1280px] items-center justify-between gap-4 px-5 py-3 sm:px-10 lg:px-[73px]">

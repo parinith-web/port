@@ -124,9 +124,9 @@ const DY = [0, -4, 3, -2, 4, -1, 2];
 const GREEN = "#16a34a";
 const SCRIPT = "'Mrs Saint Delafield', 'Brush Script MT', cursive";
 
-const Scale = () => (
+const Scale = ({ children = "scale." }: { children?: string }) => (
   <span className="relative inline-block" style={{ transform: "rotate(-5deg) translateY(0.04em)", marginLeft: "0.05em" }}>
-    <span style={{ fontFamily: SCRIPT, color: GREEN, fontSize: "2.1em", lineHeight: 0.6, letterSpacing: "0.01em" }}>scale.</span>
+    <span style={{ fontFamily: SCRIPT, color: GREEN, fontSize: "2.1em", lineHeight: 0.6, letterSpacing: "0.01em" }}>{children}</span>
   </span>
 );
 
@@ -293,7 +293,7 @@ export default function SkillsSection() {
                       return (
                         <div
                           key={name}
-                          className="flex flex-col items-center gap-[0.8em] rounded-[1.3em] border border-black/5 bg-white pt-[1.6em] shadow-[0_10px_24px_-6px_rgba(20,20,40,0.28)] motion-reduce:transition-none"
+                          className="flex flex-col items-center gap-[0.8em] rounded-[1.3em] border border-black/5 bg-white pt-[1.7em] shadow-[0_10px_24px_-6px_rgba(20,20,40,0.28)] motion-reduce:transition-none"
                           style={{
                             width: "11.5cqw",
                             height: "15.5cqw",
@@ -306,8 +306,8 @@ export default function SkillsSection() {
                               : `transform 350ms ease-in ${i * 20}ms, opacity 300ms ease ${i * 20}ms`,
                           }}
                         >
-                          <Icon className="text-[#161616]" style={{ width: "4.4cqw", height: "4.4cqw" } as CSSProperties} />
-                          <span className="px-1 text-center font-semibold leading-tight text-[#161616]" style={{ fontSize: "1.2cqw" }}>
+                          <Icon className="text-[#161616]" style={{ width: "5.28cqw", height: "5.28cqw" } as CSSProperties} />
+                          <span className="px-1 text-center font-semibold leading-tight text-[#161616]" style={{ fontSize: "1.44cqw" }}>
                             {name}
                           </span>
                         </div>
@@ -345,11 +345,11 @@ export default function SkillsSection() {
                 className="absolute font-medium leading-[1.1] tracking-[-0.035em]"
                 style={{ left: "8%", top: "47%", width: "50%", fontSize: "4cqw" }}
               >
-                Full-stack products
+                Languages, frameworks
                 <br />
-                engineered to last,
+                and tools I
                 <br />
-                <span className="whitespace-nowrap">designed to <Scale /></span>
+                <span className="whitespace-nowrap"><Scale>build with.</Scale></span>
               </p>
 
               {/* floating topic pills */}
@@ -384,11 +384,11 @@ export default function SkillsSection() {
           style={{ background: "linear-gradient(180deg,#e4e4ea,#f3f3f8)" }}
         >
           <p className="text-2xl font-medium leading-tight tracking-[-0.02em] sm:text-3xl">
-            Full-stack products
+            Languages, frameworks
             <br />
-            engineered to last,
+            and tools I
             <br />
-            <span className="whitespace-nowrap">designed to <Scale /></span>
+            <span className="whitespace-nowrap"><Scale>build with.</Scale></span>
           </p>
           <div className="mt-6 flex flex-wrap gap-2.5 text-xs sm:text-sm">
             {domains.map((d, i) => (
@@ -411,7 +411,7 @@ export default function SkillsSection() {
                   className="flex flex-col items-center gap-2 rounded-2xl border border-black/5 bg-white px-2 py-4 shadow-[0_8px_18px_-8px_rgba(20,20,40,0.3)]"
                   style={{ animation: `skill-pop 500ms cubic-bezier(.34,1.56,.64,1) ${i * 55}ms both` }}
                 >
-                  <Icon className="h-8 w-8 text-[#161616]" />
+                  <Icon className="h-[2.4rem] w-[2.4rem] text-[#161616]" />
                   <span className="text-center text-[11px] font-semibold leading-tight [overflow-wrap:normal] [word-break:normal]">{name}</span>
                 </li>
               ))}
