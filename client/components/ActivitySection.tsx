@@ -146,7 +146,7 @@ function CodeforcesChart() {
 
 export default function ActivitySection() {
   return (
-    <section id="activity" className="mt-20 scroll-mt-24 lg:mt-28">
+    <section id="activity" className="mt-32 scroll-mt-24 lg:mt-44">
       <h2 className="text-center text-3xl font-extrabold tracking-[-1px] text-white sm:text-4xl lg:text-5xl">
         Activity
       </h2>

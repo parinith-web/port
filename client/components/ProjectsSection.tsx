@@ -91,7 +91,7 @@ function ProjectCard({ project }: { project: Project }) {
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="mt-20 scroll-mt-24 lg:mt-28">
+    <section id="projects" className="mt-32 scroll-mt-24 lg:mt-44">
       <h2 className="text-center text-3xl font-extrabold tracking-[-1px] text-white sm:text-4xl lg:text-5xl">
         Projects
       </h2>

@@ -7,7 +7,7 @@ export default function Index() {
   return (
     <>
       <Hero />
-      <div className="mx-auto max-w-[1280px] px-6 pb-20 pt-0 sm:px-10 lg:relative lg:px-[73px]">
+      <div className="mx-auto max-w-[1280px] px-6 pb-28 pt-0 sm:px-10 lg:relative lg:px-[73px]">
       <SkillsSection />
       <ProjectsSection />
       <ActivitySection />
