@@ -1,0 +1,266 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+  */
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* The layout was designed and tested at 90% browser zoom, so bake that
+     in as the default on desktop-sized viewports instead of relying on
+     everyone manually zooming out. Left off on small screens since mobile
+     browsers don't expose the same zoom control and shrinking further
+     there would just make touch targets and text smaller. `zoom` is
+     supported in Chromium and current Firefox/Safari; browsers that don't
+     support it simply render at 100%, which just means visitors are back
+     to the un-zoomed layout rather than seeing anything broken. */
+  @media (min-width: 1024px) {
+    html {
+      zoom: 90%;
+    }
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  pre,
+  code {
+    overflow-x: auto;
+    white-space: pre;
+  }
+}
+
+/* ---- Hero wordmark ---- */
+.crisp {
+  color: #000;
+  -webkit-text-stroke: 0.035em #fff;
+  paint-order: stroke fill;
+  text-shadow: 0.03em 0.03em 0 #000;
+}
+.block-n {
+  position: relative;
+  z-index: 2;
+  font-size: 1.55em;
+  line-height: 0.62;
+  margin: 0 -0.02em 0 0.02em;
+  color: #fff;
+  -webkit-text-stroke: 0.06em #000;
+  paint-order: stroke fill;
+  transform: translateY(0.1em) skewX(-6deg) rotate(-2deg);
+}
+.halftone {
+  color: #333;
+  filter: blur(0.015em);
+  transform: skewX(-8deg);
+  -webkit-mask-image: radial-gradient(circle, #000 38%, transparent 44%);
+  -webkit-mask-size: 6px 6px;
+  mask-image: radial-gradient(circle, #000 38%, transparent 44%);
+  mask-size: 6px 6px;
+  opacity: 0.85;
+}
+.fade-far { opacity: 0.5; }
+@media (prefers-reduced-motion: no-preference) {
+  .block-n { animation: nDrop 0.9s cubic-bezier(0.2, 0.9, 0.2, 1) both; }
+  @keyframes nDrop {
+    from { transform: translateY(-0.5em) skewX(-6deg) rotate(-8deg); opacity: 0; }
+  }
+}
+
+.marquee-track { animation: marquee 28s linear infinite; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
+.block-n { font-size: 1.4em; line-height: 0.62; transform: translateY(0.07em) skewX(-6deg) rotate(-2deg); }
+
+/* halftone letters (mid-tone) + stretched tail on the "p" */
+.halftone {
+  color: #161616;
+  opacity: 0.95;
+  -webkit-mask-image: radial-gradient(circle, #000 49%, transparent 55%);
+  mask-image: radial-gradient(circle, #000 49%, transparent 55%);
+  -webkit-mask-size: 6px 6px;
+  mask-size: 6px 6px;
+}
+.fade-far { opacity: 0.8; }
+/* a white copy of the "p", cut at the baseline and stretched downward,
+   so the tail is the glyph's own stem (same shape, same skew, same dots) */
+
+/* Seamless "p": the glyph is drawn in a light tone with mix-blend-mode:difference,
+   so it renders dark over the white page and light over the black base, switching
+   colour exactly along the (rough) edge instead of at a fixed line. Every wordmark
+   letter sits directly in the section's stacking context (no z-index on its parents)
+   so the blend can see the base underneath. */
+h1 > span { position: relative; z-index: 10; }
+
+/* "p": the dots keep ONE colour everywhere. The strip the tail runs through is cut
+   out of the black base (.p-cut = a solid white copy of the stem, same glyph/skew),
+   and the dotted tail (.p-tail::after = the same glyph stretched downward) sits on it.
+   Glyph and tail share a single dot grid via the mask on .p-tail. */
+.p-wrap { position: relative; transform: skewX(-8deg); transform-origin: 50% 0.75em; }
+.p-cut {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #fff;
+  /* exactly the stem's width (no text-shadow): the tail's outer dot columns sit flush
+     against the black base, with nothing spilling over it */
+  clip-path: inset(0.8em -1em -3em -1em);
+  /* widen the cut by one 6px dot column per side so the extra lighter dots sit on white */
+  text-shadow: -6px 0 #fff, 6px 0 #fff;
+  transform: scaleY(3.9);
+  transform-origin: 0 0.8em;
+}
+.p-tail {
+  position: relative;
+  display: block;
+  padding-bottom: 1.5em;
+  margin-bottom: -1.5em;
+  -webkit-mask-image: radial-gradient(circle, #000 49%, transparent 55%);
+  mask-image: radial-gradient(circle, #000 49%, transparent 55%);
+  -webkit-mask-size: 6px 6px;
+  mask-size: 6px 6px;
+  filter: blur(0.015em); /* blurred once, in screen space, so the tail end stays tight */
+}
+.p-tail > .halftone {
+  transform: none;
+  filter: none;
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+.p-tail::after {
+  content: "p";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #161616;
+  opacity: 0.95;
+  clip-path: inset(0.8em -1em -3em -1em);
+  /* one extra column of lighter dots on each side of the tail */
+  text-shadow: -6px 0 #8a8a8a, 6px 0 #8a8a8a;
+  transform: scaleY(3.9);
+  transform-origin: 0 0.8em;
+}
+
+.footer-warp { filter: url(#footer-warp-sm); }
+@media (min-width: 640px) { .footer-warp { filter: url(#footer-warp-md); } }
+@media (min-width: 1024px) { .footer-warp { filter: url(#footer-warp-lg); } }
+/* footer wordmark: pick the grain filter that matches the letter size */
+.footer-grain-white { filter: url(#footer-grain-white-sm); }
+.footer-grain-shadow { filter: url(#footer-grain-shadow-sm); }
+.footer-grain-ink { filter: url(#footer-grain-ink-sm); }
+@media (min-width: 640px) {
+  .footer-grain-white { filter: url(#footer-grain-white-md); }
+  .footer-grain-shadow { filter: url(#footer-grain-shadow-md); }
+  .footer-grain-ink { filter: url(#footer-grain-ink-md); }
+}
+@media (min-width: 1024px) {
+  .footer-grain-white { filter: url(#footer-grain-white-lg); }
+  .footer-grain-shadow { filter: url(#footer-grain-shadow-lg); }
+  .footer-grain-ink { filter: url(#footer-grain-ink-lg); }
+}
