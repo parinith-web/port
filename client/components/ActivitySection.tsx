@@ -39,7 +39,7 @@ function Block({
 export default function ActivitySection() {
   return (
     <section id="activity" className="mt-28 scroll-mt-24 lg:mt-40">
-      <div className={PANEL_CLASS} style={{ fontFamily: FONT }}>
+      <div className={`${PANEL_CLASS} mx-auto max-w-[1000px]`} style={{ fontFamily: FONT }}>
         <SectionHeading title="Activity" />
 
         <div className="mt-12 flex flex-col gap-16 lg:mt-16">

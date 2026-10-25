@@ -182,7 +182,7 @@ export default function SkillsSection() {
               {/* back plate */}
               <div
                 className="absolute inset-0 rounded-[3.2em] shadow-[0_30px_60px_-30px_rgba(20,20,40,0.35)]"
-                style={{ background: "linear-gradient(180deg,#dcdce3,#ececf2)" }}
+                style={{ background: "linear-gradient(180deg,#dbeafe,#eff6ff)" }}
               />
               <div
                 className="absolute inset-x-[1.9%] rounded-[2.4em]"
