@@ -56,7 +56,7 @@ const GRAIN_TIERS = [
 export default function Footer() {
   return (
     <footer
-      className="relative w-full overflow-hidden bg-[#0a0f11] text-white"
+      className="relative w-full overflow-hidden bg-page text-white"
       style={{ fontFamily: "'Inter Tight', system-ui, sans-serif" }}
     >
       {/* grainy, spray-painted edge filter for the wordmark */}

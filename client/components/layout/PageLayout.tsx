@@ -5,7 +5,7 @@ import Footer from "./Footer";
 export default function PageLayout({ children }: { children: ReactNode }) {
   return (
     <div
-      className="flex min-h-screen flex-col bg-black text-white"
+      className="flex min-h-screen flex-col bg-page text-white"
       style={{ zoom: 1.1 }}
     >
       <Header />

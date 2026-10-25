@@ -18,6 +18,8 @@ export default {
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
+        // softened page black (was pure #000) - one tone shared by header, page, hero pedestal, footer
+        page: "#0a0f11",
         foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "hsl(var(--primary))",

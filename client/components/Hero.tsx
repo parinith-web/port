@@ -70,7 +70,7 @@ export default function Hero() {
 
       {/* pedestal */}
       <div className="relative z-0 flex flex-col items-center gap-12 pb-6 pt-[clamp(120px,13.5vw,230px)] lg:gap-[72px] lg:pb-8">
-        <div className="absolute -inset-x-8 bottom-[-16px] top-0 -z-10 bg-black" style={{ filter: "url(#rough)" }} />
+        <div className="absolute -inset-x-8 bottom-[-16px] top-0 -z-10 bg-page" style={{ filter: "url(#rough)" }} />
         <div className="absolute inset-x-0 top-[clamp(48px,5vw,84px)] flex flex-wrap items-center justify-center gap-x-6 gap-y-3 px-5 sm:gap-x-[4vw] sm:pl-[calc(20px+4vw)]">
           <Tag>
             <span>Creative</span>
