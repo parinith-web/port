@@ -146,9 +146,11 @@ export default function SkillsSection() {
 
   const pillClass = (i: number) =>
     `relative flex items-center gap-[0.6em] whitespace-nowrap rounded-[0.7em] font-semibold uppercase tracking-[0.02em] shadow-[0_2px_10px_rgba(20,20,40,0.08)] outline-none transition-all duration-300 focus-visible:ring-2 focus-visible:ring-[#3b82f6] motion-reduce:transition-none ${
-      active === i
-        ? "scale-110 bg-[#111] text-white"
-        : "bg-white text-[#161616] hover:scale-105"
+      hovered === i
+        ? "scale-110 bg-[#3b82f6] text-white"
+        : active === i
+          ? "scale-110 bg-[#111] text-white"
+          : "bg-white text-[#161616] hover:scale-105"
     }`;
 
   const Count = ({ i }: { i: number }) => (
@@ -182,7 +184,7 @@ export default function SkillsSection() {
               {/* back plate */}
               <div
                 className="absolute inset-0 rounded-[3.2em] shadow-[0_30px_60px_-30px_rgba(20,20,40,0.35)]"
-                style={{ background: "linear-gradient(180deg,#dbeafe,#eff6ff)" }}
+                style={{ background: "linear-gradient(180deg,#dcdce3,#ececf2)" }}
               />
               <div
                 className="absolute inset-x-[1.9%] rounded-[2.4em]"
