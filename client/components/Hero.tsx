@@ -10,7 +10,7 @@ const PROFILE = {
   resume: "/resume.pdf",
 };
 
-const RED = "#1fe06e"; // accent (green)
+const RED = "#3b82f6"; // accent (blue)
 
 const Tag = ({ children }: { children: ReactNode }) => (
   <div className="flex items-center text-[15px] font-bold uppercase leading-none tracking-tight text-white sm:text-[clamp(14px,2.1vw,30px)]">
@@ -88,7 +88,7 @@ export default function Hero() {
             href={PROFILE.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-md border border-white/15 bg-white/[0.04] px-5 py-2.5 text-sm font-medium text-white transition-colors hover:border-white/30 hover:bg-white/[0.08] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1fe06e] sm:text-base"
+            className="inline-flex items-center gap-2 rounded-md border border-white/15 bg-white/[0.04] px-5 py-2.5 text-sm font-medium text-white transition-colors hover:border-white/30 hover:bg-white/[0.08] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3b82f6] sm:text-base"
           >
             <GithubIcon className="h-4 w-4 sm:h-5 sm:w-5" />
             GitHub
@@ -97,7 +97,7 @@ export default function Hero() {
             href={PROFILE.resume}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-md bg-[#1fe06e] px-5 py-2.5 text-sm font-semibold text-black transition-colors hover:bg-[#4dea8a] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1fe06e] sm:text-base"
+            className="inline-flex items-center gap-2 rounded-md bg-[#3b82f6] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#2563eb] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3b82f6] sm:text-base"
           >
             Resume
             <ArrowUpRight className="h-4 w-4 sm:h-5 sm:w-5" strokeWidth={2.25} />

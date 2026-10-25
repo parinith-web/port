@@ -1,4 +1,4 @@
-export const GREEN = "#16a34a";
+export const GREEN = "#3b82f6";
 export const SECTION_FONT = "'Inter Tight', system-ui, sans-serif";
 export const PANEL_CLASS = "w-full text-white";
 
@@ -8,7 +8,7 @@ export default function SectionHeading({
   dark = false,
 }: {
   title: string;
-  /** optional leading word(s) in the normal heading colour; `title` then turns green */
+  /** optional leading word(s) in the normal heading colour; `title` then turns blue */
   lead?: string;
   dark?: boolean;
 }) {

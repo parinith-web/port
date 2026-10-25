@@ -13,10 +13,10 @@ interface ContributionsResponse {
 
 const LEVEL_STYLES: Record<number, { bg: string; shadow: string }> = {
   0: { bg: "rgba(255,255,255,0.07)", shadow: "none" },
-  1: { bg: "#0e4429", shadow: "none" },
-  2: { bg: "#16803c", shadow: "none" },
-  3: { bg: "#16a34a", shadow: "none" },
-  4: { bg: "#4ade80", shadow: "none" },
+  1: { bg: "#1e3a8a", shadow: "none" },
+  2: { bg: "#1d4ed8", shadow: "none" },
+  3: { bg: "#3b82f6", shadow: "none" },
+  4: { bg: "#60a5fa", shadow: "none" },
 };
 
 const MONTH_NAMES = [
@@ -163,7 +163,7 @@ export default function GithubActivityCalendar({
     <div style={{ fontFamily: "'Inter Tight', system-ui, sans-serif" }}>
       {totalCount !== null && (
         <p className="mb-5 flex items-baseline gap-3">
-          <span className="text-[44px] font-medium leading-none tracking-[-0.03em] text-[#16a34a]">
+          <span className="text-[44px] font-medium leading-none tracking-[-0.03em] text-[#3b82f6]">
             {totalCount}
           </span>
           <span className="text-[15px] text-white/55">contributions</span>

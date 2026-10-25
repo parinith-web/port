@@ -125,7 +125,7 @@ export default function Footer() {
             {Icon && <Icon className="h-[18px] w-[18px] sm:h-5 sm:w-5" />}
             {label}
             {!Icon && (
-              <ArrowUpRight className="h-4 w-4 text-white/40 transition-colors group-hover:text-[#16a34a]" strokeWidth={2.25} />
+              <ArrowUpRight className="h-4 w-4 text-white/40 transition-colors group-hover:text-[#3b82f6]" strokeWidth={2.25} />
             )}
           </a>
         ))}

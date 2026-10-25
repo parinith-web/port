@@ -121,7 +121,7 @@ const PILL_POS: [number, number][] = [
 ];
 const ROT = [-5, 3, -2, 5, -4, 2, -3];
 const DY = [0, -4, 3, -2, 4, -1, 2];
-const GREEN = "#16a34a";
+const GREEN = "#3b82f6";
 const SCRIPT = "'Mrs Saint Delafield', 'Brush Script MT', cursive";
 
 const Scale = ({ children = "scale." }: { children?: string }) => (
@@ -145,7 +145,7 @@ export default function SkillsSection() {
   });
 
   const pillClass = (i: number) =>
-    `relative flex items-center gap-[0.6em] whitespace-nowrap rounded-[0.7em] font-semibold uppercase tracking-[0.02em] shadow-[0_2px_10px_rgba(20,20,40,0.08)] outline-none transition-all duration-300 focus-visible:ring-2 focus-visible:ring-[#16a34a] motion-reduce:transition-none ${
+    `relative flex items-center gap-[0.6em] whitespace-nowrap rounded-[0.7em] font-semibold uppercase tracking-[0.02em] shadow-[0_2px_10px_rgba(20,20,40,0.08)] outline-none transition-all duration-300 focus-visible:ring-2 focus-visible:ring-[#3b82f6] motion-reduce:transition-none ${
       active === i
         ? "scale-110 bg-[#111] text-white"
         : "bg-white text-[#161616] hover:scale-105"
